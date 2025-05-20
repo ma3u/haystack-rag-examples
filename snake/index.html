@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutritional Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Nutritional Snake Game</h1>
+            <div class="level-display">
+                <span>Level: </span>
+                <span id="levelDisplay">1</span>
+                <span class="level-speed">(Speed: x<span id="speedMultiplier">1.0</span>)</span>
+            </div>
+            <div class="scores-wrapper">
+                <div class="player player-one">
+                    <h2>Player 1</h2>
+                    <div class="score-container">
+                        <span>Score: </span>
+                        <span id="scoreP1">0</span>
+                    </div>
+                    <div class="calorie-container">
+                        <span>Calories: </span>
+                        <span id="caloriesP1">0</span>
+                    </div>
+                </div>
+                <div class="player player-two">
+                    <h2>Player 2</h2>
+                    <div class="score-container">
+                        <span>Score: </span>
+                        <span id="scoreP2">0</span>
+                    </div>
+                    <div class="calorie-container">
+                        <span>Calories: </span>
+                        <span id="caloriesP2">0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="game-buttons">
+                <button id="startButton">Start Game</button>
+            </div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div class="food-info" id="foodInfo">Collect fruits and vegetables for points. Beware of sweets!</div>
+        <div id="audioNotice" class="audio-notice" style="color: #ff6b00; background-color: #fffae0; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ffcc00;">
+            <strong>⚠️ Audio Notice:</strong> If you're not hearing sound effects, you need to enable autoplay in your browser:
+            <ul style="margin: 5px 0 0 20px; font-size: 0.9em;">
+                <li><strong>Chrome:</strong> Click the site info icon (lock or info symbol) in the address bar → Permissions → Sound → Allow</li>
+                <li><strong>Safari:</strong> Safari → Settings → Websites → Auto-Play → Allow All Auto-Play</li>
+                <li><strong>Firefox:</strong> Click the lock icon → Site Permissions → Autoplay → Allow Audio</li>
+                <li><strong>Edge:</strong> Click the lock icon → Site permissions → Media autoplay settings → Allow</li>
+            </ul>
+            <p style="margin-top: 5px; font-size: 0.9em;">After changing settings, refresh the page and click the Start Game button or press Space to enable audio. You can also try clicking anywhere on the game area first.</p>
+        </div>
+        <div class="game-controls">
+            <div class="controls-wrapper">
+                <div class="player-controls player-one-controls">
+                    <h3>Player 1 Controls</h3>
+                    <p>WASD keys to move</p>
+                </div>
+                <div class="player-controls player-two-controls">
+                    <h3>Player 2 Controls</h3>
+                    <p>Arrow keys to move</p>
+                </div>
+            </div>
+            <div class="game-hints">
+                <p><span class="hint-good">🥗</span> Healthy foods = More points!</p>
+                <p><span class="hint-bad">🍬</span> Sweets slow you down and shorten your snake!</p>
+                <p>Complete each level to progress and increase speed</p>
+                <p>Press P to pause the game</p>
+                <p>Press Space to start the game or drop poop while playing</p>
+            </div>
+            <p id="winnerDisplay"></p>
+        </div>
+    </div>
+    <!-- Using browser's native Audio API -->
+    <script src="game.js"></script>
+</body>
+</html>
